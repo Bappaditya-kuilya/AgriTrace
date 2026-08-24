@@ -1,0 +1,102 @@
+/* Monsoon Ledger: an ownable multi-role agricultural intelligence system. */
+:root {
+  --atlas-canvas: #f7f4ee;
+  --atlas-paper: #ffffff;
+  --atlas-ink: #1d2a44;
+  --atlas-muted: #5d6978;
+  --atlas-line: #dedbd2;
+  --atlas-forest: #007a73;
+  --atlas-forest-deep: #1d2a44;
+  --atlas-moss: #e1f1ed;
+  --atlas-signal: #c74332;
+  --atlas-warn: #a96d12;
+}
+
+/* Shared semantic utilities used by role routes. Components express purpose, not a hex value. */
+.atlas-canvas { background-color: var(--atlas-canvas) !important; }.atlas-surface { background-color: var(--atlas-paper) !important; }
+.hover\:atlas-canvas:hover { background-color: var(--atlas-canvas) !important; }
+.atlas-ink-surface { background-color: var(--atlas-ink) !important; }.atlas-ink-text { color: var(--atlas-ink) !important; }.atlas-ink-border { border-color: var(--atlas-ink) !important; }
+.atlas-muted-text { color: var(--atlas-muted) !important; }.atlas-border { border-color: var(--atlas-line) !important; }
+.atlas-action { background-color: var(--atlas-forest) !important; color: #fff !important; }.atlas-action:hover, .atlas-action-hover { background-color: #00665f !important; }
+.atlas-action-text { color: var(--atlas-forest) !important; }.atlas-action-border { border-color: var(--atlas-forest) !important; }
+.atlas-verified-surface { background-color: var(--atlas-moss) !important; }.atlas-dark-muted { color: #d8e0e6 !important; }
+.atlas-divide > :not([hidden]) ~ :not([hidden]) { border-color: var(--atlas-line) !important; }
+.atlas-alert-surface { background-color: #fff1ef !important; }.atlas-alert-text { color: var(--atlas-signal) !important; }.atlas-alert-border { border-color: #e6b8b1 !important; }
+.atlas-review-surface { background-color: #fff8e9 !important; }.atlas-review-text { color: var(--atlas-warn) !important; }
+
+body, button, input, select, textarea,
+.font-serif, .ops-brand b, .verify-brand b,
+main[class*="bg-[#f3f5f2]"] h1, main[class*="bg-[#f3f5f2]"] h2, main[class*="bg-[#f3f5f2]"] h3,
+.ops-command-identity h2, .ops-panel-heading h2, .ops-investigation h2,
+.verify-banner h1, .verify-record > h2, .verify-section-head h2, .verify-warning h2 {
+  font-family: "Source Sans 3", sans-serif !important;
+}
+
+.font-mono, .ops-command-identity h2, .ops-table td:first-child small,
+.ops-ledger-copy small, .verify-section-head h2, .ops-integrity-link b {
+  font-family: "IBM Plex Mono", monospace !important;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Brand navigation: authoritative ink, recognizable gold waypoint, teal active state. */
+.ops-sidebar { background: #1d2a44 !important; color: #f7f4ee !important; border-right: 0 !important; }
+.ops-brand-row { border-color: rgba(255,255,255,.12) !important; }.ops-brand { color: #fff !important; }
+.ops-brand-mark, .verify-brand-mark { display: inline-grid; height: 32px; width: 32px; place-items: center; border-radius: 8px; background: #f2dca7; box-shadow: inset 0 0 0 5px #1d2a44, inset 0 0 0 8px #f2dca7; }.ops-brand small { color: #cbd3dd !important; }
+.ops-org { border: 1px solid rgba(255,255,255,.12) !important; background: #283650 !important; }.ops-org p { color: #fff !important; }.ops-org small { color: #cbd3dd !important; }
+.ops-org-avatar { background: #f2dca7 !important; color: #1d2a44 !important; }.ops-nav > p { color: #aebbc9 !important; }
+.ops-nav-item { color: #d5dce5 !important; }.ops-nav-item:hover { background: rgba(255,255,255,.08) !important; color: #fff !important; }
+.ops-nav-item.is-active { background: #e1f1ed !important; color: #006d66 !important; }.ops-nav-item i { background: #c74332 !important; border-radius: 999px !important; }
+.ops-sidebar-bottom { border-color: rgba(255,255,255,.12) !important; }.ops-integrity { color: #cbd3dd !important; }.ops-integrity strong { color: #fff !important; }.ops-integrity svg { color: #f2dca7 !important; }.ops-help { color: #f2dca7 !important; }
+
+/* The workspace is warm, quiet, and legible; brand color is attached to meaning. */
+main[class*="bg-[#f3f5f2]"] > header,
+.ops-header, .verify-header { background: #fcfbf8 !important; border-color: var(--atlas-line) !important; box-shadow: 0 1px 0 rgba(29,42,68,.06) !important; }
+main[class*="bg-[#f3f5f2]"] > header a { color: #1d2a44 !important; }.ops-main, .verify-app { background: var(--atlas-canvas) !important; }
+main[class*="bg-[#f3f5f2]"] > header + div > aside:first-child { border: 1px solid #1d2a44 !important; background: #1d2a44 !important; box-shadow: 0 12px 28px rgba(29,42,68,.12) !important; }
+main[class*="bg-[#f3f5f2]"] > header + div > aside:first-child::before { background: #d39b2a !important; }
+main[class*="bg-[#f3f5f2]"] > header + div > aside:first-child h1 { color: #fff !important; }.ops-eyebrow, main[class*="bg-[#f3f5f2]"] > header + div > section > p:first-child, main[class*="bg-[#f3f5f2]"] > header + div > section > div > p:first-child { color: #557062 !important; }
+main[class*="bg-[#f3f5f2]"] > header + div > aside:first-child .text-\[10px\] { color: #f2dca7 !important; }
+main[class*="bg-[#f3f5f2]"] > header + div > aside:first-child p:not(.text-\[10px\]),
+main[class*="bg-[#f3f5f2]"] > header + div > aside:first-child .text-\[10px\] + p,
+main[class*="bg-[#f3f5f2]"] > header + div > aside:first-child [class*="text-[#c3d9cd]"],
+main[class*="bg-[#f3f5f2]"] > header + div > aside:first-child [class*="text-[#d4e5db]"] { color: #d8e0e6 !important; }
+
+main[class*="bg-[#f3f5f2]"] section[class*="border"], main[class*="bg-[#f3f5f2]"] aside[class*="border"],
+.ops-route-panel, .ops-table-panel, .ops-investigation, .verify-record, .verify-warning, .verify-trust {
+  border-color: var(--atlas-line) !important; border-radius: 8px !important; box-shadow: 0 2px 8px rgba(29,42,68,.045) !important;
+}
+main[class*="bg-[#f3f5f2]"] section[class*="border"] > div:first-child[class*="border-b"], main[class*="bg-[#f3f5f2]"] aside[class*="border"] > div:first-child[class*="border-b"], .ops-table th { background: #fbfaf6 !important; border-color: var(--atlas-line) !important; }
+main[class*="bg-[#f3f5f2]"] input, main[class*="bg-[#f3f5f2]"] select, main[class*="bg-[#f3f5f2]"] textarea, .ops-command-search { border-color: #cfd2ca !important; background: #fff !important; }
+main[class*="bg-[#f3f5f2]"] input:focus, main[class*="bg-[#f3f5f2]"] select:focus, main[class*="bg-[#f3f5f2]"] textarea:focus { border-color: #007a73 !important; outline-color: rgba(0,122,115,.22) !important; }
+
+/* Teal means do or confirm, gold is an identity detail, and risk remains explicit. */
+main[class*="bg-[#f3f5f2]"] button.bg-\[\#167254\], main[class*="bg-[#f3f5f2]"] button[class*="bg-[#167254]"], .ops-primary { background: #007a73 !important; }
+main[class*="bg-[#f3f5f2]"] button.bg-\[\#167254\]:hover, main[class*="bg-[#f3f5f2]"] button[class*="bg-[#167254]"]:hover, .ops-primary:hover { background: #00665f !important; }
+.ops-outline, .ops-icon-button { color: #006d66 !important; border-color: #c7d3cf !important; }
+.ops-command-bar { border-color: #c7d3cf !important; background: #fff !important; }.batch-seal { border-color: #9fc6bd !important; background: #e9f5f1 !important; }.batch-seal::before, .batch-seal::after, .batch-seal span::before { border-color: #007a73 !important; }
+.ops-route-panel { border-top: 3px solid #1d2a44 !important; }.ops-investigation { border-top: 3px solid #d39b2a !important; }
+.ops-risk-card { background: #fff !important; }.risk-red { border-color: #e6b8b1 !important; border-left: 3px solid #c74332 !important; color: #1d2a44 !important; }.risk-amber { border-color: #ead3a7 !important; border-left: 3px solid #a96d12 !important; color: #1d2a44 !important; }
+.ops-risk-card span, .ops-risk-card p { color: #5d6978 !important; }.ops-table tbody tr.is-selected, .ops-ledger-card.is-selected { background: #e1f1ed !important; box-shadow: inset 3px 0 #007a73 !important; }
+.state-verified { background: #e1f1ed !important; color: #006d66 !important; }.state-review { background: #fff1dc !important; color: #8c5708 !important; }.state-transit { background: #e8edf6 !important; color: #40557d !important; }
+
+/* Consumer verification feels like an ownable trust document, not a second dashboard. */
+.verify-header { background: #fcfbf8 !important; }.verify-brand { color: #1d2a44 !important; }
+.verify-banner { border-color: #1d2a44 !important; background: #1d2a44 !important; }.verify-banner .ops-eyebrow { color: #f2dca7 !important; }.verify-banner .verify-banner-copy > p:not(.ops-eyebrow), .verify-banner .verify-meta span { color: #d8e0e6 !important; }.verify-chip { border-color: rgba(242,220,167,.4) !important; background: rgba(242,220,167,.12) !important; color: #fff1c7 !important; }
+.verify-journey { border-top: 3px solid #007a73 !important; }.verify-step { border-color: #9fc6bd !important; background: #e1f1ed !important; color: #006d66 !important; }.verify-step-review { border-color: #e6b8b1 !important; background: #fff1ef !important; color: #a43022 !important; }
+.verify-warning { border-left-color: #a96d12 !important; background: #fff8e9 !important; }.verify-trust { border-left-color: #007a73 !important; background: #eaf4f1 !important; }
+
+/* Compatibility bridge: older role routes retain their markup while resolving to one brand palette. */
+[class*="bg-[#12352c]"], [class*="bg-[#0c2e24]"], [class*="bg-[#0e3429]"] { background-color: var(--atlas-ink) !important; }
+[class*="text-[#12352c]"], [class*="text-[#174d3c]"], [class*="text-[#0c2e24]"], [class*="text-[#17382f]"] { color: var(--atlas-ink) !important; }
+[class*="bg-[#167254]"], [class*="bg-[#1d7555]"], [class*="bg-[#2e6f53]"], [class*="bg-[#1f684d]"] { background-color: var(--atlas-forest) !important; }
+[class*="hover:bg-[#105941]"], [class*="hover:bg-[#165e44]"] { background-color: #00665f !important; }
+[class*="text-[#167254]"], [class*="text-[#1d7555]"], [class*="text-[#2e6f53]"], [class*="text-[#1f684d]"], [class*="text-[#1c7654]"] { color: var(--atlas-forest) !important; }
+[class*="border-[#0c2e24]"], [class*="border-[#12352c]"] { border-color: var(--atlas-ink) !important; }
+[class*="border-[#d6e2da]"], [class*="border-[#d7e2da]"], [class*="border-[#d5e2d9]"], [class*="border-[#dae2dc]"], [class*="border-[#d4e3d8]"], [class*="border-[#cfded4]"], [class*="border-[#cfddd4]"], [class*="border-[#cad9cf]"], [class*="border-[#e4ebe6]"] { border-color: var(--atlas-line) !important; }
+[class*="bg-[#f3f5f2]"], [class*="bg-[#f4f8f5]"], [class*="bg-[#e9f5ed]"], [class*="bg-[#edf7f1]"] { background-color: var(--atlas-canvas) !important; }
+[class*="text-[#667d71]"], [class*="text-[#627a6d]"], [class*="text-[#6e8478]"], [class*="text-[#647b6f]"], [class*="text-[#647c6f]"], [class*="text-[#6a8175]"], [class*="text-[#6b8176]"], [class*="text-[#688176]"], [class*="text-[#738a7e]"], [class*="text-[#638075]"], [class*="text-[#4f6d5f]"], [class*="text-[#537165]"] { color: var(--atlas-muted) !important; }
+[class*="text-[#9bc6af]"] { color: #f2dca7 !important; }
+[class*="text-[#d4e5db]"], [class*="text-[#c3d9cd]"] { color: #d8e0e6 !important; }
+[class*="border-l-[#2c8d66]"], [class*="border-[#2c8d66]"] { border-color: var(--atlas-forest) !important; }
+
+@media (max-width: 639px) { .ops-sidebar { box-shadow: 16px 0 42px rgba(29,42,68,.24) !important; } }
